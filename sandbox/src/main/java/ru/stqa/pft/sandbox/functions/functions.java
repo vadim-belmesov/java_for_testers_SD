@@ -5,7 +5,7 @@ public class functions {
         hello("Alex");
 
         //Вычисление площади квадрата
-        double len = 10; //
+        double len = 10;
         System.out.println("Площадь квадрата со стороной " + len + " = " + area(len));
 
         //Вычисление площади прямоугольника
@@ -16,7 +16,6 @@ public class functions {
     public static void hello (String some_string) {
         System.out.println("Hello, " + some_string + "!");
     }
-
     public static double area (double l) { //площадь квадрата
         return l * l;
     }
