@@ -11,21 +11,26 @@ import ru.stqa.pft.sandbox.point_distace.Point;
 3. Сделать запускаемый класс, то есть содержащий функцию public static void main(String[] args) {...} и при помощи него убедиться, что функция вычисления расстояния между точками действительно работает.
 Результат вычисления выводить на экран и контролировать визуально.
 4. Реализовать то же самое (вычисление расстояния между двумя точками) при помощи метода в классе Point, и добавить в созданный в предыдущем пункте запускаемый класс примеры использования метода вместо ранее созданной функции.
+
+*****Комментарий Алексея к задаче
+работать нужно не с четырьмя числами, а с двумя объектами типа Point
+когда мы делаем метод в классе Point, то у этого метода должен быть один параметр — вторая точка.
+первая точка — тот объект, в котором метод вызывается, он внутри метода доступен по специальному имени this,
+а вторая точка должна быть передана в метод в виде параметра
+(8;−1), ( 4 ; 2 )
+5
 */
 public class point_distance {
   public static void main(String[] args) {
-    Point p1 = new Point();
-    p1.x = 8;
-    p1.y = -1;
+    //Point1
+    double x1=8;
+    double y1=-1;
+    Point coordinate = new Point(x1,y1);
 
-    Point p2 = new Point();
-    p2.x = 4;
-    p2.y = 2;
+    //Point2
+    double x2=4;
+    double y2=2;
 
-    System.out.println("Distance = " + distance(p1, p2));
-
-  }
-  public static double distance (Point p1, Point p2){
-    return Math.sqrt(Math.pow((p2.x - p1.x),2) + Math.pow((p2.y - p1.y),2));
+    System.out.println("Distance = " + coordinate.p2(x2, y2)); //Distance = 5.0
   }
 }
