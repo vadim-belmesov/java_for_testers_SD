@@ -1,5 +1,4 @@
 package ru.stqa.pft.sandbox.point_distace;
-import ru.stqa.pft.sandbox.point_distace.Point;
 
 /*
 Задание №2: Потренироваться использовать функции, классы, объекты и методы (После лекции 1.9)
@@ -20,17 +19,17 @@ import ru.stqa.pft.sandbox.point_distace.Point;
 (8;−1), ( 4 ; 2 )
 5
 */
-public class point_distance {
+public class PointDistance {
   public static void main(String[] args) {
     //Point1
-    double x1=8;
-    double y1=-1;
-    Point coordinate = new Point(x1,y1);
-
+    double x1=155;
+    double y1=-100;
     //Point2
     double x2=4;
     double y2=2;
+    Point p1 = new Point(x1,y1);
+    Point p2 = new Point(x2,y2);
 
-    System.out.println("Distance = " + coordinate.p2(x2, y2)); //Distance = 5.0
+    System.out.println("Distance = " + p1.distance(p2)); //Distance = 5.0 //182.22239159883728
   }
 }
