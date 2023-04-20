@@ -92,6 +92,4 @@ public class GroupsCreatingTests {
       return false;
     }
   }
-
-
 }
