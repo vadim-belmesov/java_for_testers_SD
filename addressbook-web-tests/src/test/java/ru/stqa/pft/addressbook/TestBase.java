@@ -25,7 +25,7 @@ public class TestBase {
       login("admin", "secret");
     }
 
-    private void login(String username, String password) {
+    protected void login(String username, String password) {
       wd.findElement(By.name("user")).click();
       wd.findElement(By.name("user")).clear();
       wd.findElement(By.name("user")).sendKeys(username);
@@ -72,7 +72,15 @@ public class TestBase {
       wd.quit();
     }
 
-    private boolean isElementPresent(By by) {
+    protected void deleteSelectedGroup() {
+      wd.findElement(By.name("delete")).click();
+    }
+
+    protected void selectGroup() {
+      wd.findElement(By.name("selected[]")).click();
+    }
+
+    protected boolean isElementPresent(By by) {
       try {
         wd.findElement(by);
         return true;
@@ -81,7 +89,7 @@ public class TestBase {
       }
     }
 
-    private boolean isAlertPresent() {
+    protected boolean isAlertPresent() {
       try {
         wd.switchTo().alert();
         return true;
