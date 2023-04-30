@@ -6,8 +6,8 @@ public class ContactCreatingTests extends TestBase{
 
   @Test
   public void testCreateContact() throws Exception {
-    app.goToNewContactPage();
-    app.fillContacrForm();
+    app.getContactHelper().goToNewContactPage();
+    app.getContactHelper().fillContacrForm();
     app.logout();
   }
 }
