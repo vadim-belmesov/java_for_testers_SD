@@ -5,7 +5,7 @@ import ru.stqa.pft.addressbook.model.ContactData;
 
 public class ContactModificationTests extends TestBase {
     @Test
-    public void testContactModificationTests(){
+    public void testContactModification(){
         app.getNavigationHelper().goToHomePage();
         app.getContactHelper().editContact();
         //final ContactData contactData = new ContactData("1", "2", "+7", "a@a");
