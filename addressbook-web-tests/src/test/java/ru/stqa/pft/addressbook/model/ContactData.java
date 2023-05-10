@@ -26,7 +26,6 @@ public class ContactData {
     public String getEmail() {
         return email;
     }
-
     public String getGroup() {
         return group;
     }
