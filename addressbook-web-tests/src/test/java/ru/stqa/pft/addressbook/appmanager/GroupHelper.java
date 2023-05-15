@@ -22,24 +22,26 @@ public class GroupHelper extends HelperBase {
         type(By.name("group_name"), groupData.getName());
         type(By.name("group_header"), groupData.getHeader());
         type(By.name("group_footer"), groupData.getFooter());
+
+        if (isElementPresent(By.xpath("//input[@value='Enter information']"))){
+            submitGroupCreation();
+        } else if(isElementPresent(By.xpath("//input[@value='Update']"))){
+            submitGroupModification();
+        }
     }
 
     public void initGroupCreation() {
         click(By.name("new"));
     }
-
     public void deleteSelectedGroup() {
         click(By.name("delete"));
     }
-
     public void selectGroup() {
         click(By.name("selected[]"));
     }
-
     public void initGroupModification() {
         click(By.name("edit"));
     }
-
     public void submitGroupModification() {
         click(By.name("update"));
     }
