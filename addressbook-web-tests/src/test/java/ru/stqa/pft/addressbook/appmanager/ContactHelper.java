@@ -13,15 +13,14 @@ public class ContactHelper extends HelperBase {
     public void editContact() {
         click(By.xpath("//img[@alt='Edit']"));
     }
-
-    public void fillContactForm(ContactData contactData, boolean creation) {
-        type(By.name("firstname"), contactData.getFirstname());
-        type(By.name("lastname"), contactData.getLastname());
-        type(By.name("home"), contactData.getHomePhoneNumber());
-        type(By.name("email"), contactData.getEmail());
+    public void fillContactForm(ContactData contact, boolean creation) {
+        type(By.name("firstname"), contact.getFirstname());
+        type(By.name("lastname"), contact.getLastname());
+        type(By.name("home"), contact.getHomePhoneNumber());
+        type(By.name("email"), contact.getEmail());
 
         if (creation){
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contact.getGroup());
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -30,7 +29,6 @@ public class ContactHelper extends HelperBase {
         //click(By.xpath("//img[@alt='Edit']"));
         click(By.name("update"));
     }
-
     public void deleteContactButton() {
         click(By.xpath("//input[@value='Delete']"));
     }

@@ -25,7 +25,7 @@ public class GroupHelper extends HelperBase {
 
         if (isElementPresent(By.xpath("//input[@value='Enter information']"))){
             submitGroupCreation();
-        } else if(isElementPresent(By.xpath("//input[@value='Update']"))){
+        } else {
             submitGroupModification();
         }
     }
@@ -44,5 +44,13 @@ public class GroupHelper extends HelperBase {
     }
     public void submitGroupModification() {
         click(By.name("update"));
+    }
+    public void createGroup(GroupData group) {
+        initGroupCreation();
+        fillGroupForm(group);
+        returnToGroupPage();
+    }
+    public boolean isThereAGroup() {
+        return isElementPresent(By.name("selected[]"));
     }
 }
