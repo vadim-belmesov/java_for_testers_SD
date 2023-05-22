@@ -10,7 +10,7 @@ public class ContactDeletetionTests extends TestBase {
     app.getNavigationHelper().goToHomePage();
     if (!app.getContactHelper().isThereAContact()) {
       app.getNavigationHelper().goToNewContactPage();
-      app.getContactHelper().createContact(new ContactData("1", "2", "+7", "a@a.com", "Test11"), true);
+      app.getContactHelper().createContact(new ContactData("1", "2", "+7", "a@a.com", "Test11"));
       app.getNavigationHelper().goToHomePage();
     }
     app.getContactHelper().selectContact();
