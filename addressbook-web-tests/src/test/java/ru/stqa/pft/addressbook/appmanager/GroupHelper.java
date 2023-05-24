@@ -3,6 +3,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.appmanager.NavigationHelper;
 
 public class GroupHelper extends HelperBase {
 
@@ -57,5 +58,10 @@ public class GroupHelper extends HelperBase {
 
     public int getGroupCount() {
         return wd.findElements(By.name("selected[]")).size();
+    }
+
+    public boolean isAGroupPresent() {
+        click(By.linkText("groups"));
+        return isThereAGroup();
     }
 }
